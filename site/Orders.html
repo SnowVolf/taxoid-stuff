@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html> <![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ==================================================initial-scale=1, ,target-densityDpi=163 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+	<!-- CSS
+  ================================================== -->
+    <!--<link rel="stylesheet" href="/minify.php?base=css/&minify=1&files=base.css,skeleton.css,layout.css&v=2233">-->
+    <link rel="stylesheet" type="text/css" href="/css/base.css?&v=2233">
+    <link rel="stylesheet" type="text/css" href="/css/skeleton.css?&v=2233">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css?&v=2233">
+            <link rel="stylesheet" type="text/css" href="/css/slider.css?&v=2233">
+                <link rel="stylesheet" href="/css/night_theme.css?&v=2233" id="night_css">
+    
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+    <script>
+        var _rollbarConfig = {
+            accessToken: "5af826b6593545cebc3b97ee4830c816",
+            captureUncaught: true,
+            captureUnhandledRejections: true,
+            payload: {
+                environment: "production"
+            }
+        };
+        // Rollbar Snippet
+        !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=d.bind(null,c);t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;"function"==typeof e._rollbarOldOnError?t=e._rollbarOldOnError:r.onerror&&!r.onerror.belongsToShim&&(t=r.onerror,e._rollbarOldOnError=t);var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};a.belongsToShim=o,r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+        // End Rollbar Snippet
+    </script>
+    </head>
+<body>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MV92SD"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MV92SD');</script>
+    <!-- End Google Tag Manager -->
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+        
+        <div id="mhead" class="mhead">
+             
+            <a href="/" id="homeBtn" class="home"></a>
+            <a href="/logout" id="exitBtn" class="exit" style="display: none"></a>
+            <a href="#" class="settings"></a>
+                        <!--<div id="gps" class="gps"></div>-->
+            <div class="driver">1024849557            </div>
+                        <div id="in_progress"></div>
+            <div id="date" class="date"></div>
+            <div class="gps" id="gps_accuracy"></div>
+            <div class="date" id="latency" style="float:right;display: block"></div>
+        </div>
+        <div class="mbody">
+            <script>
+    window.IS_DEV = 0;
+    window.WEBSOCK_HTTP_HOSTS = ["35.246.162.82:8080"];
+    window.UPDATE_INTERVAL = 4000;
+    window.CAPTURE_INTERVAL = 4000;
+    window.adminMessages = [];
+    window.notifierMessages = [];
+    window.ENABLE_DEVICE_VALIDATION = 0;
+    window.ORDER_MAP_CENTER_POSITION = [49.99359,36.23045];
+    window.USER_LOGIN = "1024849557";
+    window.DELIVERY_TIME_COR = 0;
+    window.POINT_AB_DISABLE = 1;
+</script>
+<script>
+    window.WINDOW_NAME_OVERRIDE = true;
+    window.name = ':smart';
+</script>
+    <style>
+        .ab-button {display: none!important;}
+    </style>
+<style>
+    html, body, .container {
+        height: 100%;
+    }
+</style>
+<div id="error" class="error" style="display:block;background:green">Загрузка...</div>
+<div id="main_cnt" class="layout">
+
+<div id="view_orders" class="orders" style="display:none">
+<a href="#" id="getOrder" class="button centered-button"><i></i>Получить заказ</a>
+<ul id="orderList" class="list-orders">
+<li><a href="#">Нет заказов</a></li>
+</ul>
+<div id="notifier"></div>
+</div>
+<div id="view_assigned" class="running-order">
+<div class="order-title">Выполняемый заказ: <br><span></span></div>
+<div id="order_timeout"><span class="minutes"></span>:<span class="seconds"></span></div>
+<table class="order-data">
+<tbody>
+</tbody>
+</table>
+<div id="button_cnt">
+    <a href="#" id="cancelOrder" class="button centered-button" style="display:none;"><i></i>Отмена</a>
+    <a href="#" id="atPosition" class="button ab-button centered-button"><i></i>На месте</a>
+    <a href="#" id="onTheWay" class="button ab-button centered-button" style="display:none;"><i></i>В пути</a>
+</div>
+</div>
+
+</div>
+<div id="order_map_cnt" style="display:none;width:100%;height:100%" class="layout">
+    <div id="mapCanvas" style="width:100%;height:100%"></div>
+</div>
+<div id="settings_cnt" style="display:none" class="layout layout-padding">
+    <form id="settings-form" action="/settings" method="post">
+        <input type="checkbox" class="header-checkbox" name="price_enable" id="price_enable" value="1" checked>
+        <label for="price_enable" class="settings-header">
+            <span></span>
+            <span>Стоимость</span>
+        </label>
+        <fieldset class="collapse">
+            <div class="range">
+                <span>от <span class="range-text" data-digits="0"><input type="text" class="range-input-text" style="width:100px"></span></span>
+                <input type="range" min="20" max="500" step="1" name="price_from" id="price_from" value="94.00">
+            </div>
+            <div class="range">
+                <span>до <span class="range-text" data-digits="0"><input type="text" class="range-input-text" style="width:100px"></span></span>
+                <input type="range" min="20" max="10000" step="5" name="price_to" id="price_to" value="5020">
+            </div>
+        </fieldset>
+
+        <!-- Радиус захвата -->
+        <input type="checkbox" class="header-checkbox" id="dist_enable" name="dist_enable" value="1" checked>
+        <label for="dist_enable" class="settings-header">
+            <span></span>
+            <span>Радиус захвата, км</span> <span id="dist_switcher_cnt" style="display:none;">[<a href="#" id="dist_switcher">Исп. адрес</a>]</span> <!--<br><span class="notice-text">(только при включенном GPS)</span>-->
+        </label>
+        <fieldset class="collapse">
+            <div id="from_addr_cnt" style="display:none">
+                <div id="from_addr_text" data-placeholder="Здесь будет подсказка при вводе">Здесь будет подсказка при вводе</div>
+                <input type="text" id="from_addr" name="dist_addr" value="улица Ньютона, 119" autocomplete="off" placeholder="Введите адрес назначения" data-location="Украина,Харьков,">
+            </div>
+            <div class="range">
+                <span class="range-text" data-digits="1"><input type="text" class="range-input-text" style="width:50px"></span>
+                <input type="range" min="0.1" max="10" step="0.1" name="dist_to" value="4.00">
+            </div>
+            <input type="hidden" name="dist_location" id="from_location" value="49.938655,36.304541">
+            <input type="hidden" name="dist_use_addr" id="from_use_addr" value="1">
+        </fieldset>
+
+                    <input type="checkbox" class="header-checkbox where-addr-enable" name="where_addr_enable0" id="where_addr_enable0" value="1" checked>
+            <label for="where_addr_enable0" class="settings-header">
+                <span></span>
+                <span>Адрес назначения 1</span>
+            </label>
+            <fieldset class="collapse">
+                <div id="where_addr_text0" class="where-addr-text" data-placeholder="Здесь будет подсказка при вводе">Здесь будет подсказка при вводе</div>
+                <input type="text" id="where_addr0" name="where_addr0" class="where-addr" value="Горная улица, 8" autocomplete="off" placeholder="Введите адрес назначения" data-location="Украина,Харьков,">
+                <div class="range">
+                    <span class="range-text" data-digits="1"><input type="text" class="range-input-text" style="width:50px"></span>
+                    <input type="range" min="0.1" max="10" step="0.1" name="where_dist0" value="7.10">
+                </div>
+                <input type="checkbox" class="css-checkbox" id="ignore_price0" name="ignore_price0" value="1" >
+                <label for="ignore_price0">
+                    <span></span>
+                    <span>Не учитывать мин. стоимость</span>
+                </label>
+                <input type="hidden" name="where_location0" id="where_location0" class="where-addr-location" value="50.010545,36.180142">
+            </fieldset>
+                    <input type="checkbox" class="header-checkbox where-addr-enable" name="where_addr_enable1" id="where_addr_enable1" value="1" >
+            <label for="where_addr_enable1" class="settings-header">
+                <span></span>
+                <span>Адрес назначения 2</span>
+            </label>
+            <fieldset class="collapse">
+                <div id="where_addr_text1" class="where-addr-text" data-placeholder="Здесь будет подсказка при вводе">Здесь будет подсказка при вводе</div>
+                <input type="text" id="where_addr1" name="where_addr1" class="where-addr" value="" autocomplete="off" placeholder="Введите адрес назначения" data-location="Украина,Харьков,">
+                <div class="range">
+                    <span class="range-text" data-digits="1"><input type="text" class="range-input-text" style="width:50px"></span>
+                    <input type="range" min="0.1" max="10" step="0.1" name="where_dist1" value="5.10">
+                </div>
+                <input type="checkbox" class="css-checkbox" id="ignore_price1" name="ignore_price1" value="1" >
+                <label for="ignore_price1">
+                    <span></span>
+                    <span>Не учитывать мин. стоимость</span>
+                </label>
+                <input type="hidden" name="where_location1" id="where_location1" class="where-addr-location" value="">
+            </fieldset>
+                    <input type="checkbox" class="header-checkbox where-addr-enable" name="where_addr_enable2" id="where_addr_enable2" value="1" >
+            <label for="where_addr_enable2" class="settings-header">
+                <span></span>
+                <span>Адрес назначения 3</span>
+            </label>
+            <fieldset class="collapse">
+                <div id="where_addr_text2" class="where-addr-text" data-placeholder="Здесь будет подсказка при вводе">Здесь будет подсказка при вводе</div>
+                <input type="text" id="where_addr2" name="where_addr2" class="where-addr" value="" autocomplete="off" placeholder="Введите адрес назначения" data-location="Украина,Харьков,">
+                <div class="range">
+                    <span class="range-text" data-digits="1"><input type="text" class="range-input-text" style="width:50px"></span>
+                    <input type="range" min="0.1" max="10" step="0.1" name="where_dist2" value="5.10">
+                </div>
+                <input type="checkbox" class="css-checkbox" id="ignore_price2" name="ignore_price2" value="1" >
+                <label for="ignore_price2">
+                    <span></span>
+                    <span>Не учитывать мин. стоимость</span>
+                </label>
+                <input type="hidden" name="where_location2" id="where_location2" class="where-addr-location" value="">
+            </fieldset>
+                    <input type="checkbox" class="header-checkbox where-addr-enable" name="where_addr_enable3" id="where_addr_enable3" value="1" >
+            <label for="where_addr_enable3" class="settings-header">
+                <span></span>
+                <span>Адрес назначения 4</span>
+            </label>
+            <fieldset class="collapse">
+                <div id="where_addr_text3" class="where-addr-text" data-placeholder="Здесь будет подсказка при вводе">Здесь будет подсказка при вводе</div>
+                <input type="text" id="where_addr3" name="where_addr3" class="where-addr" value="" autocomplete="off" placeholder="Введите адрес назначения" data-location="Украина,Харьков,">
+                <div class="range">
+                    <span class="range-text" data-digits="1"><input type="text" class="range-input-text" style="width:50px"></span>
+                    <input type="range" min="0.1" max="10" step="0.1" name="where_dist3" value="5.10">
+                </div>
+                <input type="checkbox" class="css-checkbox" id="ignore_price3" name="ignore_price3" value="1" >
+                <label for="ignore_price3">
+                    <span></span>
+                    <span>Не учитывать мин. стоимость</span>
+                </label>
+                <input type="hidden" name="where_location3" id="where_location3" class="where-addr-location" value="">
+            </fieldset>
+                    <input type="checkbox" class="header-checkbox where-addr-enable" name="where_addr_enable4" id="where_addr_enable4" value="1" >
+            <label for="where_addr_enable4" class="settings-header">
+                <span></span>
+                <span>Адрес назначения 5</span>
+            </label>
+            <fieldset class="collapse">
+                <div id="where_addr_text4" class="where-addr-text" data-placeholder="Здесь будет подсказка при вводе">Здесь будет подсказка при вводе</div>
+                <input type="text" id="where_addr4" name="where_addr4" class="where-addr" value="" autocomplete="off" placeholder="Введите адрес назначения" data-location="Украина,Харьков,">
+                <div class="range">
+                    <span class="range-text" data-digits="1"><input type="text" class="range-input-text" style="width:50px"></span>
+                    <input type="range" min="0.1" max="10" step="0.1" name="where_dist4" value="5.10">
+                </div>
+                <input type="checkbox" class="css-checkbox" id="ignore_price4" name="ignore_price4" value="1" >
+                <label for="ignore_price4">
+                    <span></span>
+                    <span>Не учитывать мин. стоимость</span>
+                </label>
+                <input type="hidden" name="where_location4" id="where_location4" class="where-addr-location" value="">
+            </fieldset>
+        
+        <!-- Настройки заказов -->
+        <label class="settings-header" style="margin-top:10px;">Настройки заказов</label>
+        <fieldset>
+            <input type="checkbox" class="css-checkbox" id="preliminary" name="preliminary" value="1" checked>
+            <label for="preliminary">
+                <span></span>
+                <span>Брать предвар. заказы</span>
+            </label>
+            <input type="checkbox" class="css-checkbox" id="take_uncalc" name="take_uncalc" value="1" >
+            <label for="take_uncalc">
+                <span></span>
+                <span>Брать непросч. заказы</span>
+            </label>
+
+            <input type="checkbox" class="css-checkbox" id="ignore_multiple_address" name="ignore_multiple_address" value="1" >
+            <label for="ignore_multiple_address">
+              <span></span>
+              <span>Не брать несколько адресов</span>
+            </label>
+
+            
+            <input type="checkbox" class="css-checkbox" id="barrel_enable" name="barrel_enable" value="1" >
+            <label for="barrel_enable">
+                <span></span>
+                <span>Включить "Бочку"</span>
+            </label>
+
+                    <input type="checkbox" class="css-checkbox" id="turbo" name="turbo" value="1" >
+          <label for="turbo">
+            <span></span>
+            <span>Включить "турбо" режим</span>
+            <div id="terms_for_turbo" style="display:none;font-size: small;font-weight: normal">Позволяет Вам видеть больше заказов, чем обычно, однако с более высоким риском</div>
+          </label>
+          
+                      <input type="checkbox" class="header-checkbox" name="comments_capture_enable" id="comments_capture_enable" value="1" >
+            <label for="comments_capture_enable">
+              <span></span>
+              <span>Захват в комментариях</span>
+            </label>
+            <fieldset class="collapse">
+              <p style="font-size: small;margin:0;">Опция учитывает только радиус захвата.</p>
+              <select multiple name="comments_list[]" id="comments_list" style="margin-bottom: 5px;">
+                <option disabled>Выберите примечания</option>                                  <option value="пилотирование" >пилотирование</option>
+                                  <option value="прикурка" >прикурка</option>
+                                  <option value="буксировка" >буксировка</option>
+                              </select>
+              <input type="checkbox" class="css-checkbox" id="com_rad_check_enable" name="com_rad_check_enable" value="1" >
+              <label for="com_rad_check_enable">
+                <span></span>
+                <span>Учитывать радиус захвата</span>
+              </label>
+            </fieldset>
+                  </fieldset>
+
+        <label class="settings-header">Настройки</label>
+        <fieldset>
+            <input type="checkbox" class="css-checkbox" id="ignore_gps_accuracy" name="ignore_gps_accuracy" value="1" >
+            <label for="ignore_gps_accuracy">
+                <span></span>
+                <span>Игнорир. точность GPS <!--<span class="notice-text" style="display:inline">(может ухудшить точность захвата по радиусу)</span>--></span>
+            </label>
+            <input type="checkbox" class="css-checkbox" id="show_price" name="show_price" value="1" checked >
+            <label for="show_price">
+                <span></span>
+                <span>Показ. цены в выдаче</span>
+            </label>
+            <!--<input type="checkbox" class="css-checkbox" id="show_filtered" name="show_filtered" value="1" >
+            <label for="show_filtered">
+                <span></span>
+                <span>Показ. только отфильтр. заказы в выдаче</span>
+            </label>-->
+            <input type="checkbox" class="css-checkbox" id="night_enable" name="night_enable" value="1" checked>
+            <label for="night_enable">
+                <span></span>
+                <span>Включить ночную тему</span>
+            </label>
+            <label for="no_coords_orders_pos" style="margin-top:5px;">Отобр. заказов без координат</label>
+            <select name="no_coords_orders_pos" id="no_coords_orders_pos" style="margin-bottom:0">
+                                    <option value="TOP" >Сверху</option>
+                                    <option value="BOTTOM" selected>Снизу</option>
+                                    <option value="HIDE" >Не показывать</option>
+                            </select>
+            <label for="show_order_info" style="margin-top:5px;">Доп. инфо. в списке выдачи</label>
+            <select name="show_order_info" id="show_order_info">
+                <option value="" selected>Не показывать</option>
+                                    <option value="comment" >Комментарий к заказу</option>
+                                    <option value="where_addr" selected>Адрес назначения</option>
+                                    <option value="all" >Адрес + Комментарий</option>
+                            </select>
+        </fieldset>
+
+        <button type="submit" class="submit-button">Сохранить</button>
+
+                <hr>
+        <label class="settings-header">Секторы</label>
+        <fieldset style="margin:0">
+            <label for="region_dir" style="margin-top:5px;">Направление захвата</label>
+            <select name="region_dir" id="region_dir">
+                                    <option value="FROM_ADDR" >Адрес отправления</option>
+                                    <option value="WHERE_ADDR" selected>Адрес назначения</option>
+                            </select>
+        </fieldset>
+
+
+        <fieldset class="regions">
+            <!-- Районы -->
+            <!-- Give the fieldset a label -->
+                            <input type="checkbox" id="fchkbx1" name="filters[124]" value="1" >
+                <label for="fchkbx1">
+                    <span></span>
+                    <span>Автовокзал Гагарина</span>
+                </label>
+                            <input type="checkbox" id="fchkbx2" name="filters[97]" value="1" >
+                <label for="fchkbx2">
+                    <span></span>
+                    <span>Аеропорт</span>
+                </label>
+                            <input type="checkbox" id="fchkbx3" name="filters[6]" value="1" >
+                <label for="fchkbx3">
+                    <span></span>
+                    <span>Алексеевка</span>
+                </label>
+                            <input type="checkbox" id="fchkbx4" name="filters[118]" value="1" >
+                <label for="fchkbx4">
+                    <span></span>
+                    <span>Бавария</span>
+                </label>
+                            <input type="checkbox" id="fchkbx5" name="filters[106]" value="1" >
+                <label for="fchkbx5">
+                    <span></span>
+                    <span>Газпром</span>
+                </label>
+                            <input type="checkbox" id="fchkbx6" name="filters[93]" value="1" >
+                <label for="fchkbx6">
+                    <span></span>
+                    <span>Героев труда</span>
+                </label>
+                            <input type="checkbox" id="fchkbx7" name="filters[103]" value="1" >
+                <label for="fchkbx7">
+                    <span></span>
+                    <span>ЖД Вокзал</span>
+                </label>
+                            <input type="checkbox" id="fchkbx8" name="filters[109]" value="1" >
+                <label for="fchkbx8">
+                    <span></span>
+                    <span>Жуки</span>
+                </label>
+                            <input type="checkbox" id="fchkbx9" name="filters[102]" value="1" >
+                <label for="fchkbx9">
+                    <span></span>
+                    <span>Залютино</span>
+                </label>
+                            <input type="checkbox" id="fchkbx10" name="filters[104]" value="1" >
+                <label for="fchkbx10">
+                    <span></span>
+                    <span>Караван_Дафи</span>
+                </label>
+                            <input type="checkbox" id="fchkbx11" name="filters[128]" value="1" >
+                <label for="fchkbx11">
+                    <span></span>
+                    <span>Киев</span>
+                </label>
+                            <input type="checkbox" id="fchkbx12" name="filters[116]" value="1" >
+                <label for="fchkbx12">
+                    <span></span>
+                    <span>Киевская</span>
+                </label>
+                            <input type="checkbox" id="fchkbx13" name="filters[127]" value="1" >
+                <label for="fchkbx13">
+                    <span></span>
+                    <span>Класс тракторостроителей</span>
+                </label>
+                            <input type="checkbox" id="fchkbx14" name="filters[120]" value="1" >
+                <label for="fchkbx14">
+                    <span></span>
+                    <span>Комунальный рынок</span>
+                </label>
+                            <input type="checkbox" id="fchkbx15" name="filters[105]" value="1" >
+                <label for="fchkbx15">
+                    <span></span>
+                    <span>Научная</span>
+                </label>
+                            <input type="checkbox" id="fchkbx16" name="filters[3]" value="1" >
+                <label for="fchkbx16">
+                    <span></span>
+                    <span>Новые дома</span>
+                </label>
+                            <input type="checkbox" id="fchkbx17" name="filters[98]" value="1" >
+                <label for="fchkbx17">
+                    <span></span>
+                    <span>Одесская</span>
+                </label>
+                            <input type="checkbox" id="fchkbx18" name="filters[115]" value="1" >
+                <label for="fchkbx18">
+                    <span></span>
+                    <span>Октябрьской Революции</span>
+                </label>
+                            <input type="checkbox" id="fchkbx19" name="filters[117]" value="1" >
+                <label for="fchkbx19">
+                    <span></span>
+                    <span>Парк Артёма</span>
+                </label>
+                            <input type="checkbox" id="fchkbx20" name="filters[123]" value="1" >
+                <label for="fchkbx20">
+                    <span></span>
+                    <span>Пл. Руднева</span>
+                </label>
+                            <input type="checkbox" id="fchkbx21" name="filters[122]" value="1" >
+                <label for="fchkbx21">
+                    <span></span>
+                    <span>Пл.Востания</span>
+                </label>
+                            <input type="checkbox" id="fchkbx22" name="filters[99]" value="1" >
+                <label for="fchkbx22">
+                    <span></span>
+                    <span>Плехановская</span>
+                </label>
+                            <input type="checkbox" id="fchkbx23" name="filters[7]" value="1" >
+                <label for="fchkbx23">
+                    <span></span>
+                    <span>Поля</span>
+                </label>
+                            <input type="checkbox" id="fchkbx24" name="filters[5]" value="1" >
+                <label for="fchkbx24">
+                    <span></span>
+                    <span>Пролетарская</span>
+                </label>
+                            <input type="checkbox" id="fchkbx25" name="filters[119]" value="1" >
+                <label for="fchkbx25">
+                    <span></span>
+                    <span>Пятихатки</span>
+                </label>
+                            <input type="checkbox" id="fchkbx26" name="filters[1]" value="1" >
+                <label for="fchkbx26">
+                    <span></span>
+                    <span>Салтовка северная</span>
+                </label>
+                            <input type="checkbox" id="fchkbx27" name="filters[114]" value="1" >
+                <label for="fchkbx27">
+                    <span></span>
+                    <span>Салтовка старая</span>
+                </label>
+                            <input type="checkbox" id="fchkbx28" name="filters[94]" value="1" >
+                <label for="fchkbx28">
+                    <span></span>
+                    <span>Салтовка южная</span>
+                </label>
+                            <input type="checkbox" id="fchkbx29" name="filters[125]" value="1" >
+                <label for="fchkbx29">
+                    <span></span>
+                    <span>Стадион Металлист</span>
+                </label>
+                            <input type="checkbox" id="fchkbx30" name="filters[126]" value="1" >
+                <label for="fchkbx30">
+                    <span></span>
+                    <span>Студенческая</span>
+                </label>
+                            <input type="checkbox" id="fchkbx31" name="filters[95]" value="1" >
+                <label for="fchkbx31">
+                    <span></span>
+                    <span>Холодная гора</span>
+                </label>
+                            <input type="checkbox" id="fchkbx32" name="filters[4]" value="1" >
+                <label for="fchkbx32">
+                    <span></span>
+                    <span>ХТЗ</span>
+                </label>
+                            <input type="checkbox" id="fchkbx33" name="filters[108]" value="1" >
+                <label for="fchkbx33">
+                    <span></span>
+                    <span>Центр</span>
+                </label>
+                            <input type="checkbox" id="fchkbx34" name="filters[101]" value="1" >
+                <label for="fchkbx34">
+                    <span></span>
+                    <span>Центр верхний</span>
+                </label>
+                            <input type="checkbox" id="fchkbx35" name="filters[112]" value="1" >
+                <label for="fchkbx35">
+                    <span></span>
+                    <span>Центр нижний</span>
+                </label>
+                            <input type="checkbox" id="fchkbx36" name="filters[110]" value="1" >
+                <label for="fchkbx36">
+                    <span></span>
+                    <span>Шышковка-Жилярди</span>
+                </label>
+                            <input type="checkbox" id="fchkbx37" name="filters[107]" value="1" >
+                <label for="fchkbx37">
+                    <span></span>
+                    <span>Южд</span>
+                </label>
+                            <input type="checkbox" id="fchkbx38" name="filters[121]" value="1" >
+                <label for="fchkbx38">
+                    <span></span>
+                    <span>Якира</span>
+                </label>
+                    </fieldset>
+
+
+        <button type="submit" class="submit-button">Сохранить</button>
+            </form>
+</div>
+
+<div id="preload" style="display:none;">
+   <img src="/img/loading.gif">
+   <img src="/img/checkbox_0.png">
+   <img src="/img/checkbox_1.png">
+</div>
+
+<div id="payment_cnt" style="display:none" class="layout">
+    <form id="payment-form" action="/payment" method="post">
+        <label for="" class="settings-header" style="text-align: center;font-size:medium;margin-bottom:15px;">
+            Пожалуйста, введите сумму Вашей абонплаты
+        </label>
+        <fieldset class="collapse">
+            <div class="range" style="text-align: center;">
+                <input type="text" id="payment_amount" name="payment_amount" value="" autocomplete="off" placeholder="" style="display:inline-block;margin:0;text-align: center;height:40px;font-size:large">
+            </div>
+
+        </fieldset>
+
+        <button type="submit" class="submit-button">Подтвердить</button>
+
+    </form>
+</div>
+
+    <script>
+        window.addEventListener('load', function(e) {
+
+
+        });
+    </script>
+        </div>
+        <div class="mfoot">
+            <ul class="main_menu">
+            <!--href="tel:+380501234567"-->
+                <li><strong><a id="daysLeft"></a></strong></li>
+                                                        <li><a href="mailto:s.keila@bk.ru?subject=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%201024849557%20%28%D1%81%D0%B0%D0%B9%D1%82%20smart%29&body=">Обратная связь</a></li>
+                <li><a href="/logout">Выход</a></li>
+                            </ul>
+        </div>
+
+
+	</div><!-- container -->
+
+<!-- End Document
+================================================== -->
+</body>
+
+	<!-- Javascript Includes
+	================================================== -->
+<script>
+	document.write('<script src=/js/' +
+	('__proto__' in {} ? 'zepto' : 'jquery') +
+	'.min.js?v=1><\/script>');
+
+    var User = {"show_order_info":"where_addr","ignore_gps_accuracy":false,"dist_use_addr":1,"days_left":2,"currentOrder":null,"paymentConfirmed":true,"currency":"\u0433\u0440\u043d","use_dev":true,"is_dev":false};
+</script>
+<script src="/js/fastclick.min.js"></script>
+<script src="/js/howler.min.js?v=1.1.29"></script>
+<script src="/js/json-patch.min.js"></script>
+<!--BEGIN global External JS-->
+<!--END global JS-->
+<script src="/js/hammer.min.js?v=2233"></script>
+<script src="/js/zepto-fx.js?v=2233"></script>
+<script src="/js/common.js?v=2233"></script>
+<script src="/js/fd-slider.min.js?v=2233"></script>
+<script src="/js/rawinflate.js?v=2233"></script>
+<script src="/js/lscache.min.js?v=2233"></script>
+<script src="/js/polyfills.js?v=2233"></script>
+<script src="/js/order_map.js?v=2233"></script>
+<script src="/js/settings.js?v=2233"></script>
+<script src="/js/main-test.js?v=2233"></script>
+<script src="/js/admin/ua-parser.min.js?v=2233"></script>
+     
+<script>
+// Hides mobile browser's address bar when page is done loading.
+function hideAddressBar(){
+  if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
+    document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
+  setTimeout(function(){window.scrollTo(1,1)},0);
+}
+window.addEventListener("load", hideAddressBar );
+window.addEventListener("orientationchange", hideAddressBar );
+</script>
+</html>
+
